@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+{{product.name }} | {{ block.super }}
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+	<h1>{{ product.name }}</h1>
+</div>
+
+{% if product.photo %}
+<img src="{{ product.photo.url }}" alt="">
+{% endif %}
+
+{{ product.description|linebreaks }}
+
+{% endblock %}
